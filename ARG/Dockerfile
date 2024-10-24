@@ -1,7 +1,7 @@
-FROM almalinux:9
-ARG course="dockers" \
-    duration="3hrs"
-RUN echo "course: $course , duration: $duration"
+ARG version
+FROM almalinux:${version:-9}
+ARG course="DevOps with AWS" \
+    duration="120hrs"
+ENV duration=$duration
+RUN echo "Course: $course, duration: $duration, version: $version"
 CMD ["sleep","100"]
-
-    
